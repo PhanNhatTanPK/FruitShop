@@ -29,7 +29,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(_db.Products.Include(c=>c.ProductTypes).Include(f=>f.SpecialTag).ToList());
         }
 
-        //POST Index action method
+        //Hàm chạy Index sử dụng phương thức POST
        [HttpPost]
         public IActionResult Index(decimal? lowAmount, decimal? largeAmount)
         {
@@ -42,16 +42,16 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(products);
         }
 
-        //Get Create method
+        //Hàm tạo sản phẩm sử dụng phương thức GET
         public IActionResult Create()
         {
             ViewData["productTypeId"]=new  SelectList(_db.ProductTypes.ToList(),"Id", "ProductType");
             ViewData["TagId"]=new SelectList(_db.SpecialTags.ToList(),"Id","Name");
            return View();
         }
-        
 
-        //Post Create method
+
+        //Hàm tạo sản phẩm sử dụng phương thức POST
         [HttpPost]
         public async Task<IActionResult> Create(Products product,IFormFile image)
         {
@@ -85,7 +85,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(product);
         }
 
-        //GET Edit Action Method
+        // Hàm sửa sản phẩm sử dụng phương thức GET
 
         public ActionResult Edit(int? id)
         {
@@ -105,7 +105,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(product);
         }
 
-        //POST Edit Action Method
+        //Hàm sửa sản phẩm sử dụng phương thức POST
         [HttpPost]
         public async Task<IActionResult> Edit(Products products, IFormFile image)
         {
@@ -130,7 +130,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(products);
         }
 
-        //GET Details Action Method
+        //Hàm xem chi tiết sản phẩm sử dụng phương thức GET
         public ActionResult Details(int? id)
         {
 
@@ -148,7 +148,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(product);
         }
 
-        //GET Delete Action Method
+        //Hàm xóa sản phẩm sử dụng phương thức GET
 
         public ActionResult Delete(int? id)
         {
@@ -165,7 +165,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(product);
         }
 
-        //POST Delete Action Method
+        //Hàm xóa sản phẩm sử dụng phương thức POST
 
         [HttpPost]
         [ActionName("Delete")]

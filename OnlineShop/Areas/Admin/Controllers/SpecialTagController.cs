@@ -19,21 +19,19 @@ namespace OnlineShop.Areas.Admin.Controllers
             _db = db;
         }
 
-        //GET Index Action Method
+        //Hàm chạy index sử dụng phương thức GET
         public IActionResult Index()
         {
             return View(_db.SpecialTags.ToList());
         }
 
-        //GET Create Action Method
-
+        //Hàm tạo thẻ tên cho sản phẩm sử dụng phương thức GET
         public ActionResult Create()
         {
             return View();
         }
 
-        //POST Create Action Method
-
+        //Hàm tạo thẻ tên cho sản phẩm sử dụng phương thức POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(SpecialTag specialTag)
@@ -48,8 +46,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(specialTag);
         }
 
-        //GET Edit Action Method
-
+        //Hàm sửa thẻ tên cho sản phẩm sử dụng phương thức GET
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -65,8 +62,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(specialTag);
         }
 
-        //POST Edit Action Method
-
+        // Hàm sửa thẻ tên cho sản phẩm sử dụng phương thức POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(SpecialTag specialTag)
@@ -81,8 +77,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(specialTag);
         }
 
-        //GET Details Action Method
-
+        //Hàm xem chi tiết thẻ tên cho sản phẩm sử dụng phương thức GET
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -98,8 +93,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(specialTag);
         }
 
-        //POST Edit Action Method
-
+        // Hàm xem chi tiết thẻ tên cho sản phẩm sử dụng phương thức POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Details(SpecialTag specialTag)
@@ -108,8 +102,7 @@ namespace OnlineShop.Areas.Admin.Controllers
 
         }
 
-        //GET Delete Action Method
-
+        // Hàm xóa chi tiết thẻ tên cho sản phẩm sử dụng phương thức GET
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -125,8 +118,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(specialTag);
         }
 
-        //POST Delete Action Method
-
+        //Hàm xóa chi tiết thẻ tên cho sản phẩm sử dụng phương thức POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int? id, SpecialTag specialTag)

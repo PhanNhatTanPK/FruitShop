@@ -23,6 +23,8 @@ namespace OnlineShop.Areas.Admin.Controllers
 
             _userManager = userManager;
         }
+
+        //Hàm chạy Index sử dụng phương thức GET
         public IActionResult Index()
         {
             var roles = _roleManager.Roles.ToList();
@@ -35,6 +37,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
+        //Hàm tạo mới loại người dụng sử dụng phương thức POST
         [HttpPost]
         public async Task<IActionResult>Create(string name)
         {
@@ -56,7 +59,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
-
+        //Hàm sửa loại người dụng sử dụng phương thức GET
         public async Task<IActionResult> Edit(string id)
         {
             var role =await _roleManager.FindByIdAsync(id);
@@ -69,6 +72,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
+        //Hàm sửa loại người dụng sử dụng phương thức POST
         [HttpPost]
         public async Task<IActionResult> Edit(string id,string name)
         {
@@ -95,6 +99,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
+        //Hàm xóa loại người dụng sử dụng phương thức GET
         public async Task<IActionResult> Delete(string id)
         {
             var role = await _roleManager.FindByIdAsync(id);
@@ -107,6 +112,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
+        //Hàm xóa loại người dụng sử dụng phương thức POST
         [HttpPost]
         [ActionName("Delete")]
         public async Task<IActionResult>DeleteConfirm(string id)
@@ -135,6 +141,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
+        //Hàm để thêm loại người dùng vào CSDL
         [HttpPost]
         public async Task<IActionResult> Assign(RoleUserVm roleUser)
         {
@@ -156,6 +163,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View();
         }
 
+        //Hàm lấy dữu liệu từ CSDL lên
         public ActionResult AssignUserRole()
         {
             var result = from ur in _db.UserRoles

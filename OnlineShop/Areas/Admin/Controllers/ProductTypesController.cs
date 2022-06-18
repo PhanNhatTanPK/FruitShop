@@ -21,19 +21,18 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
         [AllowAnonymous]
         public IActionResult Index()
-        {
-            //var data = _db.ProductTypes.ToList();
+        {           
             return View(_db.ProductTypes.ToList());
         }
 
-        //GET Create Action Method
-        
+        //Hàm tạo loại sản phẩm sử dụng phương thức GET
+
         public ActionResult Create()
         {
             return View();
         }
 
-        //POST Create Action Method
+        //Hàm tạo loại sản phẩm sử dụng phương thức POST
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -50,8 +49,8 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(productTypes);
         }
 
-        //GET Edit Action Method
-       
+        //Hàm sửa loại sản phẩm sử dụng phương thức GET
+
         public ActionResult Edit(int? id)
         {
             if(id==null)
@@ -67,7 +66,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(productType);
         }
 
-        //POST Edit Action Method
+        //Hàm sửa loại sản phẩm sử dụng phương thức POST
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -85,7 +84,7 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
 
-        //GET Details Action Method
+        //Hàm xem chi tiết loại sản phẩm sử dụng phương thức GET
 
         public ActionResult Details(int? id)
         {
@@ -102,7 +101,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(productType);
         }
 
-        //POST Edit Action Method
+        //Hàm xem chi tiết loại sản phẩm sử dụng phương thức POST
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -112,7 +111,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             
         }
 
-        //GET Delete Action Method
+        //Hàm xóa chi tiết loại sản phẩm sử dụng phương thức GET
 
         public ActionResult Delete(int? id)
         {
@@ -129,7 +128,7 @@ namespace OnlineShop.Areas.Admin.Controllers
             return View(productType);
         }
 
-        //POST Delete Action Method
+        //Hàm xóa chi tiết loại sản phẩm sử dụng phương thức POST
 
         [HttpPost]
         [ValidateAntiForgeryToken]
