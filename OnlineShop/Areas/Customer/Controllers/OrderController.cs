@@ -18,15 +18,15 @@ namespace OnlineShop.Areas.Customer.Controllers
         {
             _db = db;
         }
-      
-        //GET Checkout actioin method
+
+        //GET Phương thức thanh toán
 
         public IActionResult Checkout()
         {
             return View();
         }
-      
-        //POST Checkout action method
+
+        //POST Phương thức thanh toán
 
         [HttpPost]
         [ValidateAntiForgeryToken]

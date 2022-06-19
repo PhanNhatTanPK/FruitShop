@@ -40,7 +40,7 @@ namespace OnlineShop.Areas.Customer.Controllers
                 if (result.Succeeded)
                 {
                     var isSaveRole = await _userManager.AddToRoleAsync(user, "Admin");
-                    TempData["save"] = "User has been created successfully";
+                    TempData["save"] = "Đã Tạo Thành Công";
                     return RedirectToAction(nameof(Index));
                 }
                 foreach (var error in result.Errors)
