@@ -40,8 +40,8 @@ namespace OnlineShop.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        
-        //GET product detail acation method
+
+        //GET phương thức ghi chi tiết sản phẩm
         public ActionResult Detail(int? id)
         {
             
@@ -58,7 +58,7 @@ namespace OnlineShop.Controllers
             return View(product);
         }
 
-        //POST product detail acation method
+        //POST phương thức ghi chi tiết sản phẩm
         [HttpPost]
         [ActionName("Detail")]
         public ActionResult ProductDetail(int? id)
@@ -118,7 +118,7 @@ namespace OnlineShop.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //GET product Cart action method
+        //GET phương thức hành động Giỏ hàng sản phẩm
 
         public IActionResult Cart()
         {
