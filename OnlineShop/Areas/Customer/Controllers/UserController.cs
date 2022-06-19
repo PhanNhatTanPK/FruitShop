@@ -78,7 +78,7 @@ namespace OnlineShop.Areas.Customer.Controllers
             var result =await _userManager.UpdateAsync(userInfo);
             if (result.Succeeded)
             {
-                TempData["save"] = "User has been updated successfully";
+                TempData["save"] = "Cập Nhật Thành Công";
                 return RedirectToAction(nameof(Index));
             }
             return View(userInfo);
@@ -122,7 +122,7 @@ namespace OnlineShop.Areas.Customer.Controllers
             int rowAffected=_db.SaveChanges();
             if(rowAffected>0)
             {
-                TempData["save"] = "User has been lockout successfully";
+                TempData["save"] = "Đã Khóa";
                 return RedirectToAction(nameof(Index));
             }
             return View(userInfo);
@@ -151,7 +151,7 @@ namespace OnlineShop.Areas.Customer.Controllers
             int rowAffected = _db.SaveChanges();
             if (rowAffected > 0)
             {
-                TempData["save"] = "User has been active successfully";
+                TempData["save"] = "Kích Hoạt Thành Công";
                 return RedirectToAction(nameof(Index));
             }
             return View(userInfo);
@@ -180,7 +180,7 @@ namespace OnlineShop.Areas.Customer.Controllers
             int rowAffected = _db.SaveChanges();
             if (rowAffected > 0)
             {
-                TempData["save"] = "User has been delete successfully";
+                TempData["save"] = "Đã Xóa";
                 return RedirectToAction(nameof(Index));
             }
             return View(userInfo);
