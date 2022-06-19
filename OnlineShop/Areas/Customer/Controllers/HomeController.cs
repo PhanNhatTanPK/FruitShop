@@ -42,7 +42,6 @@ namespace OnlineShop.Controllers
         }
         
         //GET product detail acation method
-
         public ActionResult Detail(int? id)
         {
             

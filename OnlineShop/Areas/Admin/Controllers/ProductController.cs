@@ -149,7 +149,6 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
         //Hàm xóa sản phẩm sử dụng phương thức GET
-
         public ActionResult Delete(int? id)
         {
             if(id==null)
@@ -166,7 +165,6 @@ namespace OnlineShop.Areas.Admin.Controllers
         }
 
         //Hàm xóa sản phẩm sử dụng phương thức POST
-
         [HttpPost]
         [ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirm(int? id)
